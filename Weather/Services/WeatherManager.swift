@@ -8,8 +8,6 @@
 
 import Foundation
 
-let londonWeatherAPI = "https://samples.openweathermap.org/data/2.5/weather?q=London&appid=b6907d289e10d714a6e88b30761fae22"
-
 class WeatherManager {
     
     let apiManager: APIManager
@@ -19,7 +17,11 @@ class WeatherManager {
     }
     
     func getLondonWeather(completion: @escaping (WeatherInfo) -> Void) {
-        apiManager.getData(from: londonWeatherAPI) { result in
+        let headers = [
+            HeaderKey.RapidAPI_Host: API.RapidAPI_Host_URL,
+            HeaderKey.RapidAPI_Key: RapidAPI_Key
+        ]
+        apiManager.getData(from: API.baseURL + "Taipei", headers: headers) { result in
             switch result {
             case .success(let data):
                 do {

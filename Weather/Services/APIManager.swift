@@ -19,6 +19,30 @@ class APIManager {
         self.defaultSession = session
     }
     
+    func getData(from urlString: String, headers: [String: String]? = nil, completion: @escaping ResultCompletion) {
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        headers?.forEach { (key, value) in
+            request.setValue(value, forHTTPHeaderField: key)
+        }
+        
+        let task = defaultSession.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let data = data {
+                completion(.success(data))
+            }
+        }
+        
+        task.resume()
+        
+    }
+    
+    
     // Swift 5
     func getData(from urlString: String, completion: @escaping ResultCompletion) {
         

@@ -25,7 +25,7 @@ class APIManagerTests: XCTestCase {
     
     func testUrlRequestWithResult() {
         // given
-        let urlString = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22"
+        let urlString = API.sampleURL
         let promise = expectation(description: "Invalid URL request")
         var resultError: Error?
         var resultData: Data?
@@ -46,34 +46,10 @@ class APIManagerTests: XCTestCase {
         XCTAssertNotNil(resultData)
         XCTAssertNil(resultError)
     }
-    
-    func testFailUrlRequestWithResult() {
-        // given 我把 samples 改成 sample
-        let urlString = "https://sample.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22"
-        let promise = expectation(description: "Invalid URL request")
-        var resultError: Error?
-        var resultData: Data?
-        
-        // when
-        apiManager.getData(from: urlString) { (result) in
-            switch result {
-            case .success(let data):
-                resultData = data
-            case .failure(let error):
-                resultError = error
-            }
-            promise.fulfill()
-        }
-        wait(for: [promise], timeout: 5)
-        
-        // then
-        XCTAssertNotNil(resultError)
-        XCTAssertNil(resultData)
-    }
 
     func testUrlRequest() {
         // given
-        let urlString = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22"
+        let urlString = API.sampleURL
         let promise = expectation(description: "Invalid URL request")
         var responseError: Error?
         var responseData: Data?
@@ -91,24 +67,34 @@ class APIManagerTests: XCTestCase {
         XCTAssertNil(responseError)
     }
     
-    func testFailUrlRequest() {
-        // given 我把 samples 改成 sample
-        let urlString = "https://sample.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22"
+    
+    func testAPIWithHeaders() {
+        // 台北
+        let urlString = API.baseURL + "Taipei"
+        let headers = [
+            HeaderKey.RapidAPI_Host: API.RapidAPI_Host_URL,
+            HeaderKey.RapidAPI_Key: RapidAPI_Key
+        ]
         let promise = expectation(description: "Invalid URL request")
-        var responseError: Error?
-        var responseData: Data?
+        var resultError: Error?
+        var resultData: Data?
         
         // when
-        apiManager.getData(from: urlString) { data, response, error in
-            responseError = error
-            responseData = data
+        apiManager.getData(from: urlString, headers: headers) { (result) in
+            switch result {
+            case .success(let data):
+                resultData = data
+                print(data)
+            case .failure(let error):
+                resultError = error
+            }
             promise.fulfill()
         }
         wait(for: [promise], timeout: 5)
         
         // then
-        XCTAssertNotNil(responseError)
-        XCTAssertNil(responseData)
+        XCTAssertNotNil(resultData)
+        XCTAssertNil(resultError)
     }
 
 }
