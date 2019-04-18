@@ -99,16 +99,13 @@
 		407FF6D22266BD2200AE3287 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				40B570652268706D005DC1F3 /* Storyboards */,
 				40B5706022685F81005DC1F3 /* Support */,
 				407FF6FE226714FD00AE3287 /* Model */,
 				407FF6F52266DD9800AE3287 /* Services */,
-				407FF6D32266BD2200AE3287 /* AppDelegate.swift */,
 				407FF6D52266BD2200AE3287 /* ViewController.swift */,
 				40B5705C22681781005DC1F3 /* PendingIndicator.swift */,
-				407FF6D72266BD2200AE3287 /* Main.storyboard */,
 				407FF6DA2266BD2600AE3287 /* Assets.xcassets */,
-				407FF6DC2266BD2600AE3287 /* LaunchScreen.storyboard */,
-				407FF6DF2266BD2600AE3287 /* Info.plist */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -147,10 +144,21 @@
 		40B5706022685F81005DC1F3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				407FF6DF2266BD2600AE3287 /* Info.plist */,
+				407FF6D32266BD2200AE3287 /* AppDelegate.swift */,
 				40B5706122685F94005DC1F3 /* APIKeys.swift */,
 				40B570632268605F005DC1F3 /* Constants.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		40B570652268706D005DC1F3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				407FF6D72266BD2200AE3287 /* Main.storyboard */,
+				407FF6DC2266BD2600AE3287 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,7 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,7 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
