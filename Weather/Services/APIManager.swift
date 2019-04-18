@@ -11,9 +11,13 @@ import Foundation
 
 class APIManager {
     
-    typealias ResultCompletion = (Result<Data?, Error>) -> Void
+    typealias ResultCompletion = (Result<Data, Error>) -> Void
     
-    var defaultSession: DHURLSession = URLSession(configuration: URLSessionConfiguration.default)
+    let defaultSession: DHURLSession
+    
+    init(session: DHURLSession = URLSession(configuration: URLSessionConfiguration.default)) {
+        self.defaultSession = session
+    }
     
     // Swift 5
     func getData(from urlString: String, completion: @escaping ResultCompletion) {
@@ -23,7 +27,7 @@ class APIManager {
         let task = defaultSession.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 completion(.failure(error))
-            } else {
+            } else if let data = data {
                 completion(.success(data))
             }
         }
