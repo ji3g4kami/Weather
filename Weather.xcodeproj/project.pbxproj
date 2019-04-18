@@ -21,6 +21,7 @@
 		407FF6FD226712F900AE3287 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FF6FC226712F900AE3287 /* WeatherManager.swift */; };
 		407FF7002267152600AE3287 /* LocWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FF6FF2267152600AE3287 /* LocWeather.swift */; };
 		407FF70322671A3000AE3287 /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 407FF70122671A1D00AE3287 /* weather.json */; };
+		40B5705D22681781005DC1F3 /* PendingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B5705C22681781005DC1F3 /* PendingIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		407FF6FC226712F900AE3287 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		407FF6FF2267152600AE3287 /* LocWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocWeather.swift; sourceTree = "<group>"; };
 		407FF70122671A1D00AE3287 /* weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weather.json; sourceTree = "<group>"; };
+		40B5705C22681781005DC1F3 /* PendingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				407FF6F52266DD9800AE3287 /* Services */,
 				407FF6D32266BD2200AE3287 /* AppDelegate.swift */,
 				407FF6D52266BD2200AE3287 /* ViewController.swift */,
+				40B5705C22681781005DC1F3 /* PendingIndicator.swift */,
 				407FF6D72266BD2200AE3287 /* Main.storyboard */,
 				407FF6DA2266BD2600AE3287 /* Assets.xcassets */,
 				407FF6DC2266BD2600AE3287 /* LaunchScreen.storyboard */,
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				407FF6D62266BD2200AE3287 /* ViewController.swift in Sources */,
+				40B5705D22681781005DC1F3 /* PendingIndicator.swift in Sources */,
 				407FF7002267152600AE3287 /* LocWeather.swift in Sources */,
 				407FF6D42266BD2200AE3287 /* AppDelegate.swift in Sources */,
 				407FF6FD226712F900AE3287 /* WeatherManager.swift in Sources */,
