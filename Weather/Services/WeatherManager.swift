@@ -16,6 +16,36 @@ class WeatherManager {
         self.apiManager = apiManager
     }
     
+    func getWeather(at city: String, completion: @escaping (WeatherInfo) -> Void) {
+        let headers = [
+            HeaderKey.RapidAPI_Host: API.RapidAPI_Host_URL,
+            HeaderKey.RapidAPI_Key: RapidAPI_Key
+        ]
+        apiManager.getData(from: API.baseURL + city, headers: headers) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let weather = try JSONDecoder().decode(LocWeather.self, from: data)
+                    let weatherInfo = WeatherInfo(
+                        cityName: weather.name,
+                        briefWeather: weather.weather[0].main,
+                        descriptiveWeather: weather.weather[0].description,
+                        temp: weather.main.temp,
+                        pressure: weather.main.pressure,
+                        humidity: weather.main.humidity,
+                        temp_min: weather.main.temp_min,
+                        temp_max: weather.main.temp_max
+                    )
+                    completion(weatherInfo)
+                } catch {
+                    print("Decoder failed", error.localizedDescription)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     func getLondonWeather(completion: @escaping (WeatherInfo) -> Void) {
         let headers = [
             HeaderKey.RapidAPI_Host: API.RapidAPI_Host_URL,
