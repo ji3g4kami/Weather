@@ -26,7 +26,7 @@ class APIManagerTests: XCTestCase {
     func testUrlRequestWithResult() {
         // given
         let urlString = API.sampleURL
-        let promise = expectation(description: "Invalid URL request")
+        let promise = expectation(description: "Successfully get Data")
         var resultError: Error?
         var resultData: Data?
         
@@ -50,7 +50,7 @@ class APIManagerTests: XCTestCase {
     func testUrlRequest() {
         // given
         let urlString = API.sampleURL
-        let promise = expectation(description: "Invalid URL request")
+        let promise = expectation(description: "Successfully get Data")
         var responseError: Error?
         var responseData: Data?
         
@@ -65,6 +65,50 @@ class APIManagerTests: XCTestCase {
         // then
         XCTAssertNotNil(responseData)
         XCTAssertNil(responseError)
+    }
+    
+    func testFailureUrlRequestWithResult() {
+        // given
+        let urlString = "Bad URL"
+        let promise = expectation(description: "Invalid URL")
+        var resultError: Error?
+        var resultData: Data?
+        
+        // when
+        apiManager.getData(from: urlString) { (result) in
+            switch result {
+            case .success(let data):
+                resultData = data
+            case .failure(let error):
+                resultError = error
+            }
+            promise.fulfill()
+        }
+        wait(for: [promise], timeout: 5)
+        
+        // then
+        XCTAssertNotNil(resultError)
+        XCTAssertNil(resultData)
+    }
+    
+    func testFailureUrlRequest() {
+        // given
+        let urlString = "Bad URL"
+        let promise = expectation(description: "Invalid URL")
+        var responseError: Error?
+        var responseData: Data?
+        
+        // when
+        apiManager.getData(from: urlString) { data, response, error in
+            responseError = error
+            responseData = data
+            promise.fulfill()
+        }
+        wait(for: [promise], timeout: 5)
+        
+        // then
+        XCTAssertNotNil(responseError)
+        XCTAssertNil(responseData)
     }
     
     

@@ -38,4 +38,10 @@ class WeatherManagerTests: XCTestCase {
             XCTAssertEqual(weatherInfo.cityName, "London")
         }
     }
+    
+    func test_GetCityWeather_ParseData() {
+        weatherManager.getWeather(at: "London") { weatherInfo in
+            XCTAssertEqual(weatherInfo.cityName, "London")
+        }
+    }
 }
