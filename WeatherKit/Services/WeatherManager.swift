@@ -8,15 +8,15 @@
 
 import Foundation
 
-class WeatherManager {
+public class WeatherManager {
     
-    let apiManager: APIManager
+    public let apiManager: APIManager
     
-    init(apiManager: APIManager = APIManager()) {
+    public init(apiManager: APIManager = APIManager()) {
         self.apiManager = apiManager
     }
     
-    func getWeather(at city: String, completion: @escaping (WeatherInfo) -> Void) {
+    public func getWeather(at city: String, completion: @escaping (WeatherInfo) -> Void) {
         let headers = [
             HeaderKey.RapidAPI_Host: API.RapidAPI_Host_URL,
             HeaderKey.RapidAPI_Key: RapidAPI_Key
@@ -46,7 +46,7 @@ class WeatherManager {
         }
     }
     
-    func getLondonWeather(completion: @escaping (WeatherInfo) -> Void) {
+    public func getLondonWeather(completion: @escaping (WeatherInfo) -> Void) {
         let headers = [
             HeaderKey.RapidAPI_Host: API.RapidAPI_Host_URL,
             HeaderKey.RapidAPI_Key: RapidAPI_Key

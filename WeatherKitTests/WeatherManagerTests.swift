@@ -7,7 +7,8 @@
 //
 
 import XCTest
-@testable import Weather
+@testable import WeatherKit
+
 
 class WeatherManagerTests: XCTestCase {
 

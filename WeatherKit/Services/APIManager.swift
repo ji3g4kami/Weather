@@ -9,22 +9,22 @@
 import Foundation
 
 
-class APIManager {
+public class APIManager {
     
-    enum APIError: Error {
+    public enum APIError: Error {
         case invalidURL
         case requestFailed
     }
     
-    typealias ResultCompletion = (Result<Data, Error>) -> Void
+    public typealias ResultCompletion = (Result<Data, Error>) -> Void
     
-    let defaultSession: DHURLSession
+    public let defaultSession: DHURLSession
     
-    init(session: DHURLSession = URLSession(configuration: URLSessionConfiguration.default)) {
+    public init(session: DHURLSession = URLSession(configuration: URLSessionConfiguration.default)) {
         self.defaultSession = session
     }
     
-    func getData(from urlString: String, headers: [String: String]? = nil, completion: @escaping ResultCompletion) {
+    public func getData(from urlString: String, headers: [String: String]? = nil, completion: @escaping ResultCompletion) {
         
         guard let url = URL(string: urlString) else {
             completion(.failure(APIError.invalidURL))
@@ -50,7 +50,7 @@ class APIManager {
         
     }
     
-    func getData(from urlString: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+    public func getData(from urlString: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         
         guard let url = URL(string: urlString) else {
             completion(nil, nil, APIError.invalidURL)

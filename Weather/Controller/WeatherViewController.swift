@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherKit
 
 class WeatherViewController: UIViewController {
     
