@@ -10,6 +10,8 @@ import Foundation
 
 public class WeatherManager {
     
+    public var cities: [String] = ["Taipei", "Tainan", "London", "Vancouver"]
+    
     public let apiManager: APIManager
     
     public init(apiManager: APIManager = APIManager()) {

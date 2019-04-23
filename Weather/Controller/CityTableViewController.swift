@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import WeatherKit
 
 class CityTableViewController: UITableViewController {
     
-    let citiesArray = ["Taipei", "Tainan", "London", "Vancouver"]
+    let citiesArray = WeatherManager().cities
 
     override func viewDidLoad() {
         super.viewDidLoad()

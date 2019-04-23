@@ -22,6 +22,13 @@
 		40599F21226D9AEA0058F588 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FF6FC226712F900AE3287 /* WeatherManager.swift */; };
 		40599F22226D9B0C0058F588 /* LocWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FF6FF2267152600AE3287 /* LocWeather.swift */; };
 		40599F23226DA5A40058F588 /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 407FF70122671A1D00AE3287 /* weather.json */; };
+		40599F26226DB2190058F588 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 40599F25226DB2190058F588 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		40599F53226DB4080058F588 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40599F52226DB4080058F588 /* IntentHandler.swift */; };
+		40599F67226DB4090058F588 /* CityWeatherIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 40599F50226DB4080058F588 /* CityWeatherIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		40599F6E226DB5B50058F588 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 40599F25226DB2190058F588 /* Intents.intentdefinition */; };
+		40599F6F226DB5B70058F588 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 40599F25226DB2190058F588 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		40599F71226DB77A0058F588 /* WeatherKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40599EFB226D7F1F0058F588 /* WeatherKit.framework */; };
+		40599F74226DC0800058F588 /* CityWeatherIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40599F73226DC0800058F588 /* CityWeatherIntentHandler.swift */; };
 		407FF6D42266BD2200AE3287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FF6D32266BD2200AE3287 /* AppDelegate.swift */; };
 		407FF6D62266BD2200AE3287 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FF6D52266BD2200AE3287 /* WeatherViewController.swift */; };
 		407FF6D92266BD2200AE3287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407FF6D72266BD2200AE3287 /* Main.storyboard */; };
@@ -54,6 +61,13 @@
 			remoteGlobalIDString = 40599EFA226D7F1F0058F588;
 			remoteInfo = WeatherKit;
 		};
+		40599F65226DB4090058F588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 407FF6C82266BD2200AE3287 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40599F4F226DB4080058F588;
+			remoteInfo = CityWeatherIntent;
+		};
 		407FF6E52266BD2600AE3287 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 407FF6C82266BD2200AE3287 /* Project object */;
@@ -75,6 +89,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		40599F4B226DB37E0058F588 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				40599F67226DB4090058F588 /* CityWeatherIntent.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +111,12 @@
 		40599F0A226D7F200058F588 /* WeatherKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKitTests.swift; sourceTree = "<group>"; };
 		40599F0C226D7F200058F588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40599F24226DAEED0058F588 /* Weather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weather.entitlements; sourceTree = "<group>"; };
+		40599F25226DB2190058F588 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		40599F36226DB37E0058F588 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		40599F50226DB4080058F588 /* CityWeatherIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CityWeatherIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		40599F52226DB4080058F588 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		40599F54226DB4080058F588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40599F73226DC0800058F588 /* CityWeatherIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherIntentHandler.swift; sourceTree = "<group>"; };
 		407FF6D02266BD2200AE3287 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407FF6D32266BD2200AE3287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407FF6D52266BD2200AE3287 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +153,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				40599F04226D7F200058F588 /* WeatherKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40599F4D226DB4080058F588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40599F71226DB77A0058F588 /* WeatherKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +216,24 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		40599F35226DB37E0058F588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40599F36226DB37E0058F588 /* IntentsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40599F51226DB4080058F588 /* CityWeatherIntent */ = {
+			isa = PBXGroup;
+			children = (
+				40599F73226DC0800058F588 /* CityWeatherIntentHandler.swift */,
+				40599F52226DB4080058F588 /* IntentHandler.swift */,
+				40599F54226DB4080058F588 /* Info.plist */,
+			);
+			path = CityWeatherIntent;
+			sourceTree = "<group>";
+		};
 		407FF6C72266BD2200AE3287 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +241,8 @@
 				407FF6E72266BD2600AE3287 /* WeatherTests */,
 				40599EFC226D7F1F0058F588 /* WeatherKit */,
 				40599F09226D7F200058F588 /* WeatherKitTests */,
+				40599F51226DB4080058F588 /* CityWeatherIntent */,
+				40599F35226DB37E0058F588 /* Frameworks */,
 				407FF6D12266BD2200AE3287 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -195,6 +254,7 @@
 				407FF6E42266BD2600AE3287 /* WeatherTests.xctest */,
 				40599EFB226D7F1F0058F588 /* WeatherKit.framework */,
 				40599F03226D7F200058F588 /* WeatherKitTests.xctest */,
+				40599F50226DB4080058F588 /* CityWeatherIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +304,7 @@
 			children = (
 				407FF6DF2266BD2600AE3287 /* Info.plist */,
 				407FF6D32266BD2200AE3287 /* AppDelegate.swift */,
+				40599F25226DB2190058F588 /* Intents.intentdefinition */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -325,6 +386,23 @@
 			productReference = 40599F03226D7F200058F588 /* WeatherKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		40599F4F226DB4080058F588 /* CityWeatherIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40599F6B226DB4090058F588 /* Build configuration list for PBXNativeTarget "CityWeatherIntent" */;
+			buildPhases = (
+				40599F4C226DB4080058F588 /* Sources */,
+				40599F4D226DB4080058F588 /* Frameworks */,
+				40599F4E226DB4080058F588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CityWeatherIntent;
+			productName = CityWeatherIntent;
+			productReference = 40599F50226DB4080058F588 /* CityWeatherIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		407FF6CF2266BD2200AE3287 /* Weather */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 407FF6ED2266BD2600AE3287 /* Build configuration list for PBXNativeTarget "Weather" */;
@@ -333,11 +411,13 @@
 				407FF6CD2266BD2200AE3287 /* Frameworks */,
 				407FF6CE2266BD2200AE3287 /* Resources */,
 				40599F17226D7F200058F588 /* Embed Frameworks */,
+				40599F4B226DB37E0058F588 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				40599F0F226D7F200058F588 /* PBXTargetDependency */,
+				40599F66226DB4090058F588 /* PBXTargetDependency */,
 			);
 			name = Weather;
 			productName = Weather;
@@ -379,6 +459,9 @@
 						CreatedOnToolsVersion = 10.2.1;
 						TestTargetID = 407FF6CF2266BD2200AE3287;
 					};
+					40599F4F226DB4080058F588 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					407FF6CF2266BD2200AE3287 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
@@ -410,6 +493,7 @@
 				407FF6E32266BD2600AE3287 /* WeatherTests */,
 				40599EFA226D7F1F0058F588 /* WeatherKit */,
 				40599F02226D7F200058F588 /* WeatherKitTests */,
+				40599F4F226DB4080058F588 /* CityWeatherIntent */,
 			);
 		};
 /* End PBXProject section */
@@ -427,6 +511,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				40599F23226DA5A40058F588 /* weather.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40599F4E226DB4080058F588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40599F6E226DB5B50058F588 /* Intents.intentdefinition in Sources */,
 				40599F1F226D9AE20058F588 /* APIManager.swift in Sources */,
 				40599F1D226D9ADA0058F588 /* APIKeys.swift in Sources */,
 				40599F21226D9AEA0058F588 /* WeatherManager.swift in Sources */,
@@ -474,6 +566,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		40599F4C226DB4080058F588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40599F74226DC0800058F588 /* CityWeatherIntentHandler.swift in Sources */,
+				40599F6F226DB5B70058F588 /* Intents.intentdefinition in Sources */,
+				40599F53226DB4080058F588 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		407FF6CC2266BD2200AE3287 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +583,7 @@
 				407FF6D62266BD2200AE3287 /* WeatherViewController.swift in Sources */,
 				40B5705D22681781005DC1F3 /* PendingIndicator.swift in Sources */,
 				40B57069226877E5005DC1F3 /* CityTableViewController.swift in Sources */,
+				40599F26226DB2190058F588 /* Intents.intentdefinition in Sources */,
 				407FF6D42266BD2200AE3287 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +613,11 @@
 			isa = PBXTargetDependency;
 			target = 40599EFA226D7F1F0058F588 /* WeatherKit */;
 			targetProxy = 40599F0E226D7F200058F588 /* PBXContainerItemProxy */;
+		};
+		40599F66226DB4090058F588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40599F4F226DB4080058F588 /* CityWeatherIntent */;
+			targetProxy = 40599F65226DB4090058F588 /* PBXContainerItemProxy */;
 		};
 		407FF6E62266BD2600AE3287 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -637,6 +745,46 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather.app/Weather";
+			};
+			name = Release;
+		};
+		40599F6C226DB4090058F588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ND2LGZT6B5;
+				INFOPLIST_FILE = CityWeatherIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dengli.weatherApp.CityWeatherIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40599F6D226DB4090058F588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ND2LGZT6B5;
+				INFOPLIST_FILE = CityWeatherIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dengli.weatherApp.CityWeatherIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -859,6 +1007,15 @@
 			buildConfigurations = (
 				40599F14226D7F200058F588 /* Debug */,
 				40599F15226D7F200058F588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40599F6B226DB4090058F588 /* Build configuration list for PBXNativeTarget "CityWeatherIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40599F6C226DB4090058F588 /* Debug */,
+				40599F6D226DB4090058F588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
