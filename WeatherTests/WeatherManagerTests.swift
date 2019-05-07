@@ -39,9 +39,14 @@ class WeatherManagerTests: XCTestCase {
         }
     }
     
-    func test_GetCityWeather_ParseData() {
-        weatherManager.getWeather(at: "London") { weatherInfo in
-            XCTAssertEqual(weatherInfo.cityName, "London")
+    func test_GetLondonWeather_ParseData() {
+        var cityName = ""
+        let promise = expectation(description: "Parse in closure")
+        weatherManager.getLondonWeather { (weatherInfo) in
+            cityName = weatherInfo.cityName
+            promise.fulfill()                       
         }
+        wait(for: [promise], timeout: 5)
+        XCTAssertEqual(weatherInfo.cityName, "London")
     }
 }
